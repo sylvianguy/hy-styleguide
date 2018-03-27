@@ -64,7 +64,7 @@ const Styleguide = (props) =>  {
           </section>
           <Sidebar info={props.match.params} />
         </main>
-        <Footer info={props.match.params} getRandomStyle={props.getRandomStyle} />
+        <Footer location={props.match.path} info={props.match.params} getRandomStyle={props.getRandomStyle} />
       </div>
     )
 }

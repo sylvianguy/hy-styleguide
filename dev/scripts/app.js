@@ -40,18 +40,15 @@ class App extends React.Component {
       const fonts = this.state.fonts;
 
       const info = Object.assign(colors, fonts);
-
-      console.log(info);
-
+      // console.log(this.props.pa);
       return (
         <Router>
           <div style={{ background: `#${colors.background}` }}>
             {/* <Footer colors={colors} getRandomStyle={getRandomStyle} /> */}
-            <Route exact path="/" render={() => <MainContent getRandomStyle={this.getRandomStyle} info={info} />} />
+            <Route exact path="/" render={(props) => <MainContent {...props} getRandomStyle={this.getRandomStyle} info={info} />} />
             <Route
               path="/styleguide/:topBar/:footerBar/:accent/:bodyText/:background/:borders/:headerText/:buttonText/:mainHeading/:subHeading/:placeholderText/:subHeadingStyle/:textTransform/:bodyFont/:labelText"
               render={(props) => <Styleguide {...props} info={info} getRandomStyle={this.getRandomStyle} />}
-              // component={Styleguide}
             />
           </div>
         </Router>

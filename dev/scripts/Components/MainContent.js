@@ -2,8 +2,9 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 
-const MainContent = ({ info, getRandomStyle }) => {
+const MainContent = ({info, getRandomStyle, location }) => {
   let { topBar, footerBar, accent, bodyText, background, borders, headerText, buttonText, mainHeading, subHeading, placeholderText, subHeadingStyle, textTransform, bodyFont, labelText } = info;
+  
   return (
     <div>
       <header style={{ background: `#${topBar}` }}></header>
@@ -63,7 +64,7 @@ const MainContent = ({ info, getRandomStyle }) => {
         </section>
         <Sidebar info={info} />
       </main>
-      <Footer info={info} getRandomStyle={getRandomStyle} />
+      <Footer location={location} info={info} getRandomStyle={getRandomStyle} />
     </div>
   )
 }

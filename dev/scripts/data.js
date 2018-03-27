@@ -223,15 +223,15 @@ const data = {
       bodyFont: 'Open Sans, sans-serif',
       labelText: 'Open Sans'
     },
-    // {
-    //   mainHeading: 'Playfair Display, serif',
-    //   subHeading: 'Lato, sans-serif',
-    //   placeholderText: 'Playfair Display, serif',
-    //   subHeadingStyle: 'italic',
-    //   textTransform: 'uppercase',
-    //   bodyFont: 'Open Sans, sans-serif',
-    //   labelText: 'Open Sans, sans-serif'
-    // },
+    {
+      mainHeading: 'Playfair Display, serif',
+      subHeading: 'Lato, sans-serif',
+      placeholderText: 'Playfair Display, serif',
+      subHeadingStyle: 'italic',
+      textTransform: 'uppercase',
+      bodyFont: 'Open Sans, sans-serif',
+      labelText: 'Open Sans, sans-serif'
+    },
     // {
     //   mainHeading: 'Playfair Display, serif',
     //   subHeading: 'Lato, sans-serif',
