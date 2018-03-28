@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route, Link
 } from 'react-router-dom';
+// import { withRouter } from 'react-router';
 
 import data from './data.js';
 import MainContent from './Components/MainContent.js';
@@ -19,11 +20,24 @@ class App extends React.Component {
         fonts: {}
       }
       this.getRandomStyle = this.getRandomStyle.bind(this);
+      this.reload = this.reload.bind(this);
 
     }
     componentDidMount() {
       this.setState({
         data: data
+      })
+    }
+
+    reload() {
+
+      this.props.history.push('/')
+      // this.props.history.goBack();
+      // forceUpdate()
+
+      this.setState({
+        colors: {},
+        fonts: {}
       })
     }
     getRandomStyle(e) {
@@ -38,22 +52,39 @@ class App extends React.Component {
     render() {
       const colors = this.state.colors;
       const fonts = this.state.fonts;
-
+      
       const info = Object.assign(colors, fonts);
-      // console.log(this.props.pa);
-      return (
-        <Router>
-          <div style={{ background: `#${colors.background}` }}>
-            {/* <Footer colors={colors} getRandomStyle={getRandomStyle} /> */}
-            <Route exact path="/" render={(props) => <MainContent {...props} getRandomStyle={this.getRandomStyle} info={info} />} />
-            <Route
-              path="/styleguide/:topBar/:footerBar/:accent/:bodyText/:background/:borders/:headerText/:buttonText/:mainHeading/:subHeading/:placeholderText/:subHeadingStyle/:textTransform/:bodyFont/:labelText"
-              render={(props) => <Styleguide {...props} info={info} getRandomStyle={this.getRandomStyle} />}
+      if (this.props.location.pathname !== '/') {
+        return (
+          <Route
+            exact
+            path="/styleguide/:topBar/:footerBar/:accent/:bodyText/:background/:borders/:headerText/:buttonText/:mainHeading/:subHeading/:placeholderText/:subHeadingStyle/:textTransform/:bodyFont/:labelText"
+            render={(props) =>
+              <Styleguide
+                {...props}
+                info={info}
+                getRandomStyle={this.getRandomStyle}
+                reload={this.reload}
+              />
+            }
+          />
+        )
+      } else {
+        return (
+          <div>
+            <MainContent
+              location={this.props.location}
+              getRandomStyle={this.getRandomStyle}
+              reload={this.reload}
+              info={info}
             />
+
           </div>
-        </Router>
-      )
+        )
+      }
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+module.exports = App;
+// export default withRouter(App);
+

@@ -19,7 +19,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('js', () => {
-	return browserify('dev/scripts/app.js', {debug: true})
+	return browserify('dev/scripts/root.js', {debug: true})
 		.transform('babelify', {
 			sourceMaps: true,
 			presets: ['es2015','react']
@@ -29,7 +29,7 @@ gulp.task('js', () => {
 			message: "Error: <%= error.message %>",
 			title: 'Error in JS 💀'
 		}))
-		.pipe(source('app.js'))
+		.pipe(source('root.js'))
 		.pipe(buffer())
 		.pipe(gulp.dest('public/scripts'))
 		.pipe(reload({stream:true}));

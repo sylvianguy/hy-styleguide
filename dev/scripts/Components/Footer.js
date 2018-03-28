@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Footer = ({ location, info, getRandomStyle }) => {
+const Footer = ({ location, info, getRandomStyle, reload }) => {
   let { topBar, footerBar, accent, bodyText, background, borders, headerText, buttonText, mainHeading, subHeading, placeholderText, subHeadingStyle, textTransform, bodyFont, labelText } = info;
 
   if(location.pathname !== '/') {
     return (
       <footer style={{ background: `#${footerBar}` }}>
-        <Link to="/" className="save">Home</Link>
+        {/* <Link to="/" className="save">Home</Link> */}
+        <button onClick={reload}>Home</button>
       </footer>
     )
   } else {
@@ -23,6 +24,9 @@ const Footer = ({ location, info, getRandomStyle }) => {
       </footer>
     )
   }
+  // return (
+  //   <h2>hello</h2>
+  // )
 }
 
 export default Footer;
