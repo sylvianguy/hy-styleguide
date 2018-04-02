@@ -4,12 +4,13 @@ import {
   BrowserRouter as Router,
   Route, Link
 } from 'react-router-dom';
+import WebFont from 'webfontloader';
 // import { withRouter } from 'react-router';
 
-import data from './data.js';
-import MainContent from './Components/MainContent.js';
-import Footer from './Components/Footer.js';
-import Styleguide from './Components/Styleguide.js';
+import data from '../data.js';
+import MainContent from './MainContent.js';
+import Footer from './Footer.js';
+import Styleguide from './Styleguide.js';
 
 class App extends React.Component {
     constructor() {
@@ -43,6 +44,18 @@ class App extends React.Component {
     getRandomStyle(e) {
       let prop = this.state.data[e.target.value];
       const randoIndex = Math.floor(Math.random() * prop.length);
+
+      console.log(prop[randoIndex]);
+      // mainHeading
+      // placeholderText
+      // subHeading
+
+      WebFont.load({
+        google: {
+          families: [`${prop[randoIndex].mainHeading}:${prop[randoIndex].subWeight}, ${prop[randoIndex].placeholderText}:${prop[randoIndex].subWeight}, ${prop[randoIndex].subHeading}:${prop[randoIndex].subWeight}`]
+        }
+      });
+
       this.setState({
         [e.target.value]: prop[randoIndex]
       })
@@ -58,7 +71,7 @@ class App extends React.Component {
         return (
           <Route
             exact
-            path="/styleguide/:topBar/:footerBar/:accent/:bodyText/:background/:borders/:headerText/:buttonText/:mainHeading/:subHeading/:placeholderText/:subHeadingStyle/:textTransform/:bodyFont/:labelText"
+            path="/styleguide/:topBar/:footerBar/:accent/:bodyText/:background/:borders/:headerText/:buttonText/:mainHeading/:subHeading/:placeholderText/:subStyle/:textTransform/:bodyFont/:labelText/:subWeight/:subTransform/:bodyWeight/:paraLineHeight/:buttonTransform/:buttonWeight"
             render={(props) =>
               <Styleguide
                 {...props}

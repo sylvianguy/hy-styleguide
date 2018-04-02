@@ -121,7 +121,7 @@ a:hover {
 
 /*Buttons*/
 
-button {
+.button {
 	padding: 15px 50px;
 	background: #ffc4ac;
 	text-align: center;
@@ -135,7 +135,7 @@ button {
 	margin-top: 15px;
 }
 
-button:hover {
+.button:hover {
 	background: rgba(255,196,172,0.6);
 }
 
@@ -239,7 +239,7 @@ footer span {
 	text-transform: uppercase;
 }
 
-footer button {
+footer .button {
 	border: 1.5px solid #fff;
 	color: #fff;
 	padding: 5px 20px;
@@ -248,11 +248,11 @@ footer button {
 	font-size: 12px;
 }
 
-footer button:hover {
+footer .button:hover {
 	background: rgba(255,255,255,0.3);
 }
 
-footer button.save {
+footer .button.save {
 	float: right;
 }
 

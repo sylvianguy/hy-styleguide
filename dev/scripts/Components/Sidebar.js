@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Sidebar = ({ info }) => {
-  let { topBar, footerBar, accent, bodyText, background, borders, headerText, buttonText, mainHeading, subHeading, placeholderText, subHeadingStyle, textTransform, bodyFont, labelText } = info;
+  let { topBar, footerBar, accent, bodyText, background, borders, headerText, buttonText, mainHeading, subHeading, placeholderText, textTransform, bodyFont, labelText, labelTransform } = info;
   return (
     <section className="rightside">
       <h4
@@ -13,21 +13,33 @@ const Sidebar = ({ info }) => {
       <form action="">
         <h6
           style={{
-            color: `#${bodyText}`
-          }}>
-          Form Label Heading Six</h6>
-        <input name="firstname" type="text" style={{ fontFamily: placeholderText }} placeholder="input area" />
+            color: `#${bodyText}`,
+            fontFamily: labelText,
+            textTransform: labelTransform
+        }}>
+        Form Label Heading Six</h6>
+        <input name="firstname" type="text" placeholder="input area"
+          style={{
+            fontFamily: placeholderText
+          }} 
+        />
         <h6
           style={{
             color: `#${bodyText}`,
-            textTransform: textTransform
+            textTransform: labelTransform,
+            fontFamily: labelText
           }}>
           Form Label Heading Six</h6>
-        <input name="firstname" type="text" placeholder="input area" />
+        <input name="firstname" type="text" placeholder="input area"
+          style={{
+            fontFamily: placeholderText
+          }}
+        />
         <h6
           style={{
             color: `#${bodyText}`,
-            textTransform: textTransform
+            textTransform: labelTransform,
+            fontFamily: labelText
           }}>Form Label Heading Six</h6>
         <label
           style={{
@@ -55,6 +67,7 @@ const Sidebar = ({ info }) => {
           <span className="checkmark"></span>
         </label>
         <button
+          className="button"
           style={{
             background: `#${accent}`
           }}

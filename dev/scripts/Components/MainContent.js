@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import Footer from './Footer';
 
 const MainContent = ({info, getRandomStyle, location, reload }) => {
-  let { topBar, footerBar, accent, bodyText, background, borders, headerText, buttonText, mainHeading, subHeading, placeholderText, subHeadingStyle, textTransform, bodyFont, labelText } = info;
+  let { topBar, footerBar, accent, bodyText, background, borders, headerText, buttonText, mainHeading, subHeading, placeholderText, subStyle, textTransform, bodyFont, labelText, subWeight, subTransform, bodyWeight, paraLineHeight } = info;
 
 
   return (
@@ -20,7 +20,9 @@ const MainContent = ({info, getRandomStyle, location, reload }) => {
           <p
             style={{
               color: `#${bodyText}`,
-              fontFamily: bodyFont
+              fontFamily: bodyFont,
+              fontWeight: bodyWeight,
+              lineHeight: paraLineHeight
             }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia adipisci beatae, dolore, ad nihil possimus voluptas. Necessitatibus pariatur, obcaecati, culpa iste, cumque ea minus iusto.</p>
           <h2
@@ -33,13 +35,17 @@ const MainContent = ({info, getRandomStyle, location, reload }) => {
             style={{
               color: `#${bodyText}`,
               fontFamily: subHeading,
-              fontStyle: subHeadingStyle
+              fontStyle: subStyle,
+              fontWeight: subWeight,
+              textTransform: subTransform
             }}>
             Heading Three</h3>
           <p
             style={{
               color: `#${bodyText}`,
-              fontFamily: bodyFont
+              fontFamily: bodyFont,
+              fontWeight: bodyWeight,
+              lineHeight: paraLineHeight
             }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia adipisci beatae, dolore, ad nihil possimus voluptas. Necessitatibus pariatur, obcaecati.
               <a style={{ color: `#${accent}` }} href="#">This is a link.</a></p>
@@ -53,13 +59,17 @@ const MainContent = ({info, getRandomStyle, location, reload }) => {
             style={{
               color: `#${bodyText}`,
               fontFamily: subHeading,
-              fontStyle: subHeadingStyle
+              fontStyle: subStyle,
+              fontWeight: subWeight,
+              textTransform: subTransform
             }}>
             Heading Five</h5>
           <p
             style={{
               color: `#${bodyText}`,
-              fontFamily: bodyFont
+              fontFamily: bodyFont,
+              fontWeight: bodyWeight,
+              lineHeight: paraLineHeight
             }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia adipisci beatae, dolore, ad nihil possimus voluptas. Necessitatibus pariatur, obcaecati, culpa iste, cumque ea minus iusto.</p>
         </section>

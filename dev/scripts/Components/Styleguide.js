@@ -4,9 +4,9 @@ import Footer from './Footer';
 import Sidebar from './Sidebar';
 
 const Styleguide = (props) =>  {
-  let { topBar, footerBar, accent, bodyText, background, borders, headerText, buttonText, mainHeading , subHeading , placeholderText, subHeadingStyle, textTransform, bodyFont, labelText } = props.match.params;
+  let { topBar, footerBar, accent, bodyText, background, borders, headerText, buttonText, mainHeading, subHeading, placeholderText, subStyle, textTransform, bodyFont, labelText, subWeight, subTransform, bodyWeight, paraLineHeight } = props.match.params;
     return (
-      <div>
+      <div style={{ background: `#${background}` }}>
         <header style={{ background: `#${topBar}` }}></header>
         <main>
           <section className="leftside">
@@ -19,7 +19,9 @@ const Styleguide = (props) =>  {
             <p
               style={{
                 color: `#${bodyText}`,
-                fontFamily: bodyFont
+                fontFamily: bodyFont,
+                fontWeight: bodyWeight,
+                lineHeight: paraLineHeight
               }}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia adipisci beatae, dolore, ad nihil possimus voluptas. Necessitatibus pariatur, obcaecati, culpa iste, cumque ea minus iusto.</p>
             <h2
@@ -32,13 +34,17 @@ const Styleguide = (props) =>  {
               style={{
                 color: `#${bodyText}`,
                 fontFamily: subHeading,
-                fontStyle: subHeadingStyle
+                fontStyle: subStyle,
+                fontWeight: subWeight,
+                textTransform: subTransform
               }}>
               Heading Three</h3>
             <p
               style={{
                 color: `#${bodyText}`,
-                fontFamily: bodyFont
+                fontFamily: bodyFont,
+                fontWeight: bodyWeight,
+                lineHeight: paraLineHeight
               }}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia adipisci beatae, dolore, ad nihil possimus voluptas. Necessitatibus pariatur, obcaecati.
               <a style={{ color: `#${accent}` }} href="#">This is a link.</a></p>
@@ -52,13 +58,17 @@ const Styleguide = (props) =>  {
               style={{
                 color: `#${bodyText}`,
                 fontFamily: subHeading,
-                fontStyle: subHeadingStyle
+                fontStyle: subStyle,
+                fontWeight: subWeight,
+                textTransform: subTransform
               }}>
               Heading Five</h5>
             <p
               style={{
                 color: `#${bodyText}`,
-                fontFamily: bodyFont
+                fontFamily: bodyFont,
+                fontWeight: bodyWeight,
+                lineHeight: paraLineHeight
               }}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia adipisci beatae, dolore, ad nihil possimus voluptas. Necessitatibus pariatur, obcaecati, culpa iste, cumque ea minus iusto.</p>
           </section>

@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { browserHistory } from 'react-router';
 
-import App from './app.js';
+import App from './Components/App.js';
 
 
 class Root extends React.Component {
